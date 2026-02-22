@@ -1,0 +1,155 @@
+/* ========= MOBILE GLOBAL ========= */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 3rem 1.25rem !important;
+        /* Force override */
+    }
+
+    /* Layout */
+    .container,
+    .wrapper,
+    .content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1.5rem !important;
+        /* Increased padding */
+        padding-right: 1.5rem !important;
+        /* Increased padding */
+        box-sizing: border-box;
+    }
+
+    /* Grids → Stack */
+    .grid,
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Specific Design First Grids */
+    .portfolio-grid,
+    .project-meta-grid,
+    .why-grid,
+    .philosophy-section,
+    .team-preview-grid,
+    .gallery-grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* Team Profile Layout */
+    .team-profile {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .team-profile .member-img {
+        min-height: 350px !important;
+    }
+
+    /* Flex → Column when needed */
+    .flex-between {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .carousel-section-header {
+        flex-direction: row;
+        /* Keep carousel header row */
+        align-items: center;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Typography Scaling */
+    h1,
+    .hero-headline {
+        font-size: 2.5rem !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
+    }
+
+    h4 {
+        font-size: 1.25rem !important;
+    }
+
+    p,
+    .narrative-block p {
+        font-size: 1rem !important;
+    }
+
+    /* Navigation */
+    header.container {
+        padding: 1rem 1.25rem;
+    }
+
+    nav ul {
+        display: none;
+        /* Hide default nav, assume mobile menu exists or will be styled */
+    }
+
+    /* Mobile Menu Active State */
+    body.mobile-open nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-bg);
+        z-index: 999;
+        padding-top: 5rem;
+    }
+
+    body.mobile-open nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* Carousel Items */
+    .carousel-item {
+        flex: 0 0 85% !important;
+        min-width: unset !important;
+    }
+
+    /* Hero Heights */
+    .hero-with-bg {
+        min-height: 60vh !important;
+    }
+
+    .project-hero {
+        height: 50vh !important;
+        min-height: unset !important;
+    }
+
+    /* "Blue block" hover fix - ensure hover states don't stick on touch */
+    @media (hover: none) {
+
+        .btn-primary:active,
+        .portfolio-item:active .pf-image-wrapper img {
+            transform: none !important;
+        }
+
+        a:hover {
+            color: inherit;
+            /* Reset hover colors on touch if needed */
+        }
+    }
+}

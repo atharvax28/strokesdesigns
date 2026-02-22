@@ -1,0 +1,222 @@
+﻿{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Strokes Designs",
+  "alternateName": "Strokes Designs",
+  "url": "https://www.strokesdesigns.com",
+  "logo": "https://www.strokesdesigns.com/assets/images/strokes-logo.png",
+  "description": "Strokes Designs is a unified 4-person interior design team based in India, specializing in corporate office design, modern residential interiors, and large-scale commercial projects. We deliver plug-and-play design solutions with zero reboot time for Fortune 500 companies.",
+  "foundingDate": "2010",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN",
+    "addressRegion": "Maharashtra"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "chodankar.vikas@gmail.com",
+      "telephone": "+919821424001",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "Sales",
+      "email": "chodankar.vikas@gmail.com",
+      "telephone": "+919920269445",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Vikas Chodankar",
+      "jobTitle": "Design Principal",
+      "description": "Technical lead with 30+ years of experience in workspace design, project management, and execution. Specializes in coordinating large-scale corporate projects and ensuring design precision.",
+      "email": "chodankar.vikas@gmail.com",
+      "telephone": "+919821424001",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Strokes Designs"
+      },
+      "knowsAbout": [
+        "Project Management",
+        "Technical Detailing",
+        "Workspace Design",
+        "Quality Control",
+        "Corporate Interiors",
+        "Interior Architecture"
+      ],
+      "yearsOfExperience": "30+"
+    },
+    {
+      "@type": "Person",
+      "name": "Aakanksha Tayade",
+      "jobTitle": "Design Lead",
+      "description": "Creative director with 16+ years of experience in conceptual design, client relations, and design strategy. Leads the creative vision for all projects.",
+      "email": "tayade.aakanksha@gmail.com",
+      "telephone": "+919920269445",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Strokes Designs"
+      },
+      "knowsAbout": [
+        "Conceptual Design",
+        "Client Relations",
+        "Design Strategy",
+        "Modern Interiors",
+        "Residential Design",
+        "Creative Direction"
+      ],
+      "yearsOfExperience": "16+"
+    },
+    {
+      "@type": "Person",
+      "name": "Utkarsha Mhatre",
+      "jobTitle": "Concept Lead",
+      "description": "Design storyteller with 8+ years of experience in spatial narratives and architectural concepts. Transforms client visions into cohesive design stories.",
+      "email": "utkarsha.mhatre@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Strokes Designs"
+      },
+      "knowsAbout": [
+        "Spatial Design",
+        "Architectural Concepts",
+        "Design Storytelling",
+        "Client Briefing",
+        "Concept Development"
+      ],
+      "yearsOfExperience": "8+"
+    },
+    {
+      "@type": "Person",
+      "name": "Nupur Meher",
+      "jobTitle": "Assistant Design & Design Coordinator",
+      "description": "Design coordinator with 3+ years of experience in 3D visualization, rendering, and design coordination. Brings concepts to life through detailed visualizations.",
+      "email": "nupurmeher16@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Strokes Designs"
+      },
+      "knowsAbout": [
+        "3D Visualization",
+        "Rendering",
+        "Design Coordination",
+        "Technical Documentation",
+        "CAD Software"
+      ],
+      "yearsOfExperience": "3+"
+    }
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Corporate Office Interior Design",
+        "description": "Professional office and corporate workspace design for Fortune 500 companies and large enterprises. Includes space planning, furniture selection, lighting design, and turnkey execution.",
+        "serviceType": "Interior Design",
+        "areaServed": "India"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Residential Interior Design",
+        "description": "Modern home and residential interior design services including living spaces, bedrooms, kitchens, and complete home makeovers.",
+        "serviceType": "Interior Design",
+        "areaServed": "India"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Commercial Interior Design",
+        "description": "Contract and commercial space design for retail, hospitality, and institutional clients.",
+        "serviceType": "Interior Design",
+        "areaServed": "India"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Interior Architecture",
+        "description": "Comprehensive interior architecture services including spatial planning, structural modifications, and architectural detailing.",
+        "serviceType": "Architecture",
+        "areaServed": "India"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "3D Visualization & Rendering",
+        "description": "Photorealistic 3D visualization and rendering services to help clients visualize their spaces before execution.",
+        "serviceType": "Visualization",
+        "areaServed": "India"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Project Management",
+        "description": "End-to-end project management services including vendor coordination, quality control, timeline management, and budget oversight.",
+        "serviceType": "Project Management",
+        "areaServed": "India"
+      }
+    }
+  ],
+  "knowsAbout": [
+    "Interior Design",
+    "Corporate Office Design",
+    "Workspace Design",
+    "Residential Interiors",
+    "Commercial Interiors",
+    "Interior Architecture",
+    "3D Visualization",
+    "Project Management",
+    "Space Planning",
+    "Furniture Design",
+    "Lighting Design",
+    "Turnkey Execution",
+    "Design Consultation",
+    "Modern Interiors",
+    "Contemporary Design"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "slogan": "Plug & Play efficiency. Zero reboot time.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Strokes Designs"
+  },
+  "numberOfEmployees": 4,
+  "keywords": "interior design India, corporate office design, modern workspace, Fortune 500 interiors, residential design, commercial interiors, interior architecture, 3D visualization, project management, Mumbai designers, Pune designers",
+  "clients": [
+    "Google",
+    "Ernst & Young (EY)",
+    "Fidelity Investments",
+    "Cargill",
+    "Hitachi",
+    "DNV GL",
+    "Bajaj Financial Centre",
+    "Framestore",
+    "Fractal Analytics",
+    "Axis Bank",
+    "OIC",
+    "Nucleus Office",
+    "Allianz",
+    "JSA Offices"
+  ],
+  "specialty": "Large-scale Fortune 500 corporate office interiors with plug-and-play design solutions and zero reboot time",
+  "teamStructure": "Unified 4-person team with 57+ years combined experience",
+  "uniqueSellingProposition": "Unlike traditional design firms, Strokes Designs operates as a unified 4-person team providing immediate access to all specialists without onboarding friction. Clients get plug-and-play efficiency with zero reboot time, proven scale and complexity handling, and synchronized workflow across design, execution, visualization, and project management."
+}

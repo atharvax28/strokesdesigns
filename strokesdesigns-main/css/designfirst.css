@@ -1,0 +1,554 @@
+/* Design First–inspired layout & sections — luxury editorial feel */
+
+/* Prose / narrative blocks — constrained width, generous line-height */
+.narrative-block {
+    max-width: 720px;
+    margin: 0;
+    /* Align left to match hero */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.narrative-block p {
+    margin-bottom: 1.25rem;
+}
+
+.narrative-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Page hero — two-line headline + subtitle, calm spacing (Design First style) */
+.hero.page-hero {
+    min-height: 0;
+}
+
+.hero-with-bg.hero.page-hero {
+    min-height: 55vh;
+}
+
+.page-hero {
+    padding: var(--spacing-xl) 0;
+    text-align: left;
+}
+
+/* Hero with background image */
+.hero-with-bg {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg) url('../media/axis bank/image13.jpg') center/cover no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.75) 60%, rgba(250, 248, 245, 0.5) 100%);
+    pointer-events: none;
+}
+
+.hero-with-bg .hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero .hero-headline {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: var(--spacing-md);
+}
+
+.page-hero .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--color-accent);
+    line-height: 1.6;
+    max-width: 640px;
+}
+
+/* Section label — uppercase, letter-spacing (Design First pillar style) */
+.section-label {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #000;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Philosophy / two-column section */
+.philosophy-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+    padding: var(--spacing-xl) 0;
+    scroll-margin-top: 80px;
+}
+
+.philosophy-section .philosophy-heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.philosophy-section .philosophy-text {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .philosophy-section {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* Five Pillars — Design First style: border-top, caps label, title + paragraph */
+.pillars-section {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-xl) 0;
+}
+
+.pillars-section .pillars-heading {
+    margin-bottom: var(--spacing-lg);
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.pillar-block {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+}
+
+.pillar-block:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.pillar-label {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.pillar-block h4 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.pillar-block p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-accent);
+    margin-bottom: 0;
+}
+
+/* Section image — full width within container, no crop */
+.section-image {
+    margin-top: var(--spacing-xl);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.section-image img.fit-img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Alt background sections */
+.section-alt {
+    background-color: var(--color-light-gray);
+}
+
+/* Team profile — image + name + role + paragraph bio (Design First team style) */
+.team-profile {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.team-profile+.team-profile {
+    padding-top: var(--spacing-xl);
+}
+
+.team-profile:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.team-profile .member-img {
+    aspect-ratio: 3/4;
+    width: 100%;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-light-gray);
+}
+
+.team-profile .member-img img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.team-profile .profile-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.team-profile .profile-role {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-signal);
+    margin-bottom: var(--spacing-md);
+}
+
+.team-profile .profile-bio {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.team-profile .profile-bio p {
+    margin-bottom: 0.75rem;
+}
+
+.team-profile .profile-bio p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .team-profile {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Closing CTA block — "Building Trust" style */
+.closing-block {
+    padding: var(--spacing-xl) 0;
+    text-align: left;
+}
+
+.closing-block .closing-headline {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.closing-block .closing-text {
+    max-width: 560px;
+    margin: 0 0 var(--spacing-lg);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-accent);
+}
+
+/* Why Hire The Collective — two columns: pillars (left) + callout (right) */
+.why-collective-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.why-pillars {
+    min-width: 0;
+}
+
+.why-callout {
+    background: var(--color-light-gray);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    position: sticky;
+    top: calc(var(--spacing-md) + 60px);
+}
+
+.callout-image {
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    aspect-ratio: 4/3;
+    background: var(--color-border);
+}
+
+.callout-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.callout-quote {
+    margin-bottom: var(--spacing-md);
+}
+
+.callout-quote .quote-text {
+    font-family: var(--font-subheading);
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.callout-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-md);
+}
+
+.callout-bullets li {
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    padding: 0.35rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.callout-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    background: var(--color-signal);
+    border-radius: 50%;
+}
+
+@media (max-width: 960px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-callout {
+        position: static;
+    }
+}
+
+/* Home: value pillars as cards with label + title + text */
+.value-pillar {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.value-pillar:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.value-pillar .pillar-label {
+    margin-bottom: 0.5rem;
+}
+
+.value-pillar h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.value-pillar p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-accent);
+    margin-bottom: 0;
+}
+
+/* =========================================
+   Portfolio / Project Grid Analysis 
+   (Minimalist, image-first, architectural)
+   ========================================= */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl) var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.portfolio-item {
+    display: block;
+    text-decoration: none;
+}
+
+.pf-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background-color: var(--color-light-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pf-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+    .portfolio-item:hover .pf-image-wrapper img {
+        transform: scale(1.05);
+    }
+}
+
+.pf-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: var(--spacing-xs);
+    border-top: 1px solid transparent;
+    /* Visual spacing placeholder */
+}
+
+.pf-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.pf-category {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+/* =========================================
+   Project Detail Page
+   ========================================= */
+
+.project-hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+    margin: var(--spacing-lg) 0;
+}
+
+.meta-col h6 {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.meta-col p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.project-description {
+    max-width: 800px;
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-description p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.gallery-image {
+    width: 100%;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.gallery-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 900px) {
+    .project-meta-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .gallery-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}

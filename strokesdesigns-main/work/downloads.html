@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CR9F9KC4W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CR9F9KC4W');
+    </script>
+
+    <script src="../js/auth-check.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Downloads | Strokes Designs</title>
+    <style>
+        @font-face {
+            font-family: "SF Pro Display Regular";
+            src: url("https://framerusercontent.com/assets/JlbZvh2zfRZAGLbtHVY830OtpU.woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "SF Pro Display Regular", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: rgb(29, 30, 32);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .desktop {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .folder {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .folder:hover {
+            transform: scale(1.03);
+        }
+
+        .folder:active {
+            transform: scale(0.97);
+        }
+
+        .folder-icon {
+            width: 113px;
+            height: 68px;
+            background-image: url('https://framerusercontent.com/images/NyHAHoqubrZZwhGdpw5VnkI.png?scale-down-to=512&width=1024&height=888');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .folder-label {
+            font-family: "SF Pro Display Regular", "SF Pro Display Regular Placeholder", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 43px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            font-family: "SF Pro Display Regular", "SF Pro Display Regular Placeholder", sans-serif;
+            letter-spacing: 0.07em;
+            line-height: 2.4em;
+            color: rgb(189, 189, 189);
+            text-align: center;
+            font-weight: 400;
+            z-index: 1;
+        }
+
+        .instructions strong {
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+        }
+
+        .desktop-instructions {
+            display: none;
+        }
+
+        .mobile-instructions {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-instructions {
+                display: block;
+            }
+
+            .mobile-instructions {
+                display: none;
+            }
+        }
+
+        /* Back button - exact SVG circle from source */
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            text-decoration: none;
+            display: block;
+            padding: 0;
+        }
+
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-btn">
+        <svg display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M 0 9 C 0 4.029 4.029 0 9 0 C 13.971 0 18 4.029 18 9 C 18 13.971 13.971 18 9 18 C 4.029 18 0 13.971 0 9 Z"
+                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(3 3)" width="18px"></path>
+            <path d="M 0 0 L 7.5 0" fill="transparent" height="1px" stroke-dasharray="" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(8.25 12)"
+                width="7.5px"></path>
+            <path d="M 3 0 L 0 3 L 3 6" fill="transparent" height="6px" stroke-dasharray="" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(8.25 9)"
+                width="3px"></path>
+        </svg>
+    </a>
+
+    <div class="desktop">
+        <div class="folder">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Strokes Designs<br>Portfolio</div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <div class="desktop-instructions">
+            <strong>Click & Drag</strong> to drag items<br>
+            <strong>Double Click</strong> to open items
+        </div>
+        <div class="mobile-instructions">
+            <strong>Tap & Drag</strong> to drag items<br>
+            <strong>Tap</strong> to open items
+        </div>
+    </div>
+
+    <script>
+        const folder = document.querySelector('.folder');
+        let clickCount = 0;
+        let clickTimeout = null;
+        let isTouchDevice = false;
+
+        // Detect touch interaction to avoid dual events
+        folder.addEventListener('touchstart', function () {
+            isTouchDevice = true;
+        }, { once: true });
+
+        // Single tap to open on touch devices
+        folder.addEventListener('touchend', function (e) {
+            e.preventDefault();
+            window.location.href = 'downloads-projects.html';
+        });
+
+        // Double click to open on desktop (mouse only)
+        folder.addEventListener('click', function (e) {
+            if (isTouchDevice) return;
+
+            clickCount++;
+
+            if (clickCount === 1) {
+                clickTimeout = setTimeout(() => {
+                    clickCount = 0;
+                }, 400);
+            } else if (clickCount === 2) {
+                clearTimeout(clickTimeout);
+                clickCount = 0;
+                window.location.href = 'downloads-projects.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

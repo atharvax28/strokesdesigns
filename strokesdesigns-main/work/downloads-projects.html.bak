@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CR9F9KC4W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CR9F9KC4W');
+    </script>
+
+    <script src="../js/auth-check.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strokes Designs Portfolio | Downloads</title>
+    <style>
+        @font-face {
+            font-family: "SF Pro Display Regular";
+            src: url("https://framerusercontent.com/assets/JlbZvh2zfRZAGLbtHVY830OtpU.woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "SF Pro Display Medium";
+            src: url("https://framerusercontent.com/assets/dTVfXNKgID7VXkl9c6QSFxH4c.woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "SF Pro Display Regular", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: rgb(29, 30, 32);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .desktop {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 80px 60px 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 113px);
+            grid-auto-rows: 110px;
+            gap: 40px 30px;
+            align-content: start;
+        }
+
+        .folder {
+            position: relative;
+            width: 113px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .folder:hover {
+            transform: scale(1.03);
+        }
+
+        .folder:active {
+            transform: scale(0.97);
+        }
+
+        .folder-icon {
+            width: 113px;
+            height: 68px;
+            background-image: url('https://framerusercontent.com/images/NyHAHoqubrZZwhGdpw5VnkI.png?scale-down-to=512&width=1024&height=888');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center top;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        .folder-label {
+            font-family: "SF Pro Display Regular", "SF Pro Display Regular Placeholder", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            word-wrap: break-word;
+            line-height: 1.2;
+            max-width: 113px;
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 43px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            font-family: "SF Pro Display Regular", "SF Pro Display Regular Placeholder", sans-serif;
+            letter-spacing: 0.07em;
+            line-height: 2.4em;
+            color: rgb(189, 189, 189);
+            text-align: center;
+            font-weight: 400;
+            z-index: 1;
+        }
+
+        .instructions strong {
+            font-family: "SF Pro Display Medium", "SF Pro Display Medium Placeholder", sans-serif;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+        }
+
+        .desktop-instructions {
+            display: none;
+        }
+
+        .mobile-instructions {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-instructions {
+                display: block;
+            }
+
+            .mobile-instructions {
+                display: none;
+            }
+        }
+
+        .dragging {
+            opacity: 0.7;
+            z-index: 1000;
+            position: absolute !important;
+        }
+
+        /* Back button - exact SVG from source */
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            width: 24px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 100;
+            text-decoration: none;
+            display: block;
+            padding: 0;
+        }
+
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .desktop {
+                grid-template-columns: repeat(auto-fill, 100px);
+                grid-auto-rows: 100px;
+                gap: 30px 20px;
+                padding: 80px 30px 100px;
+            }
+
+            .folder {
+                width: 100px;
+            }
+
+            .folder-icon {
+                width: 100px;
+                height: 60px;
+            }
+
+            .folder-label {
+                font-size: 12px;
+                max-width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="downloads.html" class="back-btn">
+        <svg display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M 0 9 C 0 4.029 4.029 0 9 0 C 13.971 0 18 4.029 18 9 C 18 13.971 13.971 18 9 18 C 4.029 18 0 13.971 0 9 Z"
+                fill="transparent" height="18px" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(3 3)" width="18px"></path>
+            <path d="M 0 0 L 7.5 0" fill="transparent" height="1px" stroke-dasharray="" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(8.25 12)"
+                width="7.5px"></path>
+            <path d="M 3 0 L 0 3 L 3 6" fill="transparent" height="6px" stroke-dasharray="" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="1.5" stroke="rgb(255, 255, 255)" transform="translate(8.25 9)"
+                width="3px"></path>
+        </svg>
+    </a>
+
+    <div class="desktop" id="desktop">
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1uso-l0crQn4CI-L9yVEHjPgXedd4W18f?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">EY Corporate</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1n6OfXDrCpy9Djg2qXewWVgx1Uj9af-o0?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Fractal Analytics</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1Ab0XgCn_izTA9t2Eiic1CDUUwIRAnDm4?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Fidelity Investments</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1MyRxde3uz0aeDivc-PdZ8K2Jelx0nNPE?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">DNV GL</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1SUfaO35L6DxXiwvmjBH8GP0t4BjcVHrt?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Hitachi Office</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1kfSMmSwo9PjJ98RZ30Bl-oMwgbwgLwVv?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Cargill Office</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1uafS4H1x0xRbOr7m9zHxwd_-ySJm503i?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">EY Pune</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1Iy0D7FESAAkJdnBLVZbZSHxkJ3JuxleB?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">EY Ruby</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/15wmQMFSBsz2F2QI1ojiUf6nc7L_C84c_?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Framestore Studio</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1Ua8UmSo__J2A1Qke4qSjCQtXWFG6wEvD?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Bajaj Financial</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1jzz2_g-4S1bGhMSePb1UK6ySaluVS69T?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">OIC Office</div>
+        </div>
+
+        <div class="folder"
+            data-url="https://drive.google.com/drive/folders/1aKv-iWVuTQjmwzK-I0v3Fiqv1HVvoMWY?usp=sharing">
+            <div class="folder-icon"></div>
+            <div class="folder-label">Nucleus Office</div>
+        </div>
+
+    </div>
+
+    <div class="instructions">
+        <div class="desktop-instructions">
+            <strong>Click & Drag</strong> to drag items<br>
+            <strong>Double Click</strong> to open items
+        </div>
+        <div class="mobile-instructions">
+            <strong>Tap & Drag</strong> to drag items<br>
+            <strong>Tap</strong> to open items
+        </div>
+    </div>
+
+    <script>
+        let draggedElement = null;
+        let offsetX = 0;
+        let offsetY = 0;
+        let clickTimeout = null;
+        let clickCount = 0;
+        let isDragging = false;
+        Let'startX = 0;
+        Let'startY = 0;
+        let isTouchDevice = false;
+
+        const items = document.querySelectorAll('.folder');
+
+        items.forEach(item => {
+            item.addEventListener('mousedown', startDrag);
+            item.addEventListener('touchstart', function (e) {
+                isTouchDevice = true;
+                startDrag.call(this, e);
+            });
+        });
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('touchend', endDrag);
+
+        function startDrag(e) {
+            draggedElement = this;
+            isDragging = false;
+
+            const touch = e.touches — e.touches[0] : e;
+            const rect = draggedElement.getBoundingClientRect();
+
+            startX = touch.clientX;
+            startY = touch.clientY;
+            offsetX = touch.clientX - rect.left;
+            offsetY = touch.clientY - rect.top;
+        }
+
+        function drag(e) {
+            if (!draggedElement) return;
+
+            const touch = e.touches — e.touches[0] : e;
+            const deltaX = Math.abs(touch.clientX - startX);
+            const deltaY = Math.abs(touch.clientY - startY);
+
+            if (deltaX > 5 || deltaY > 5) {
+                isDragging = true;
+                e.preventDefault();
+
+                if (!draggedElement.classList.contains('dragging')) {
+                    draggedElement.classList.add('dragging');
+                }
+
+                let newX = touch.clientX - offsetX;
+                let newY = touch.clientY - offsetY;
+
+                newX = Math.max(0, Math.min(newX, window.innerWidth - 113));
+                newY = Math.max(0, Math.min(newY, window.innerHeight - 110));
+
+                draggedElement.style.left = newX + 'px';
+                draggedElement.style.top = newY + 'px';
+            }
+        }
+
+        function endDrag(e) {
+            if (draggedElement) {
+                const wasDragging = isDragging;
+                const element = draggedElement;
+
+                draggedElement.classList.remove('dragging');
+                draggedElement = null;
+                isDragging = false;
+
+                // On touch devices, open the folder on tap (not drag)
+                if (isTouchDevice && !wasDragging && e.type === 'touchend') {
+                    e.preventDefault();
+                    openItem(element);
+                }
+            }
+        }
+
+        // Desktop: double-click to open (mouse only)
+        items.forEach(item => {
+            item.addEventListener('click', function (e) {
+                if (isTouchDevice) return;
+                if (isDragging) {
+                    isDragging = false;
+                    return;
+                }
+
+                clickCount++;
+
+                if (clickCount === 1) {
+                    clickTimeout = setTimeout(() => {
+                        clickCount = 0;
+                    }, 400);
+                } else if (clickCount === 2) {
+                    clearTimeout(clickTimeout);
+                    clickCount = 0;
+                    openItem(this);
+                }
+            });
+        });
+
+        function openItem(item) {
+            const url = item.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+</body>
+
+</html>

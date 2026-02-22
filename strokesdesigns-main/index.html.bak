@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CR9F9KC4W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5CR9F9KC4W');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strokes Designs</title>
+    <meta name="auth-page" content="true">
+    <style>
+        @font-face {
+            font-family: "SF Pro Display Regular";
+            src: url("https://framerusercontent.com/assets/JlbZvh2zfRZAGLbtHVY830OtpU.woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "SF Pro Display Medium";
+            src: url("https://framerusercontent.com/assets/dTVfXNKgID7VXkl9c6QSFxH4c.woff2");
+            font-display: swap;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1d1e20;
+            font-family: "SF Pro Display Regular", -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .folder-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            position: relative;
+        }
+
+        .folder-container:hover {
+            transform: translateY(-2px);
+        }
+
+        .folder-icon {
+            width: 114px;
+            height: 114px;
+            position: relative;
+        }
+
+        .folder-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .folder-name {
+            font-family: "SF Pro Display Regular", sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            text-align: center;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        /* Password Modal */
+        .password-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #2a2b2d;
+            border-radius: 12px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-title {
+            font-family: "SF Pro Display Medium", sans-serif;
+            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .modal-subtitle {
+            font-family: "SF Pro Display Regular", sans-serif;
+            font-size: 13px;
+            color: #bdbdbd;
+        }
+
+        .password-input-container {
+            margin-bottom: 20px;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #1d1e20;
+            border: 1px solid #3a3b3d;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: "SF Pro Display Regular", sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .password-input:focus {
+            border-color: #0a84ff;
+        }
+
+        .password-input.error {
+            border-color: #ff453a;
+            animation: shake 0.3s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        .error-message {
+            color: #ff453a;
+            font-size: 12px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .error-message.active {
+            display: block;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            background: #0a84ff;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: "SF Pro Display Medium", sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-button:hover {
+            background: #0077ed;
+        }
+
+        .submit-button:active {
+            background: #006edb;
+        }
+
+        .cancel-button {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            border: none;
+            color: #0a84ff;
+            font-family: "SF Pro Display Regular", sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .cancel-button:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 809.98px) {
+            .folder-icon {
+                width: 100px;
+                height: 100px;
+            }
+
+            .folder-name {
+                font-size: 13px;
+            }
+
+            .modal-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="folder-container" id="folderContainer">
+        <div class="folder-icon">
+            <img src="https://framerusercontent.com/images/2nAuaDjPvIHlY4ctJLgw44jkA4.png?lossless=1&width=1024&height=888"
+                alt="Folder Icon">
+        </div>
+        <div class="folder-name">
+            Strokes Designs
+        </div>
+    </div>
+
+    <div class="password-modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Enter Password</div>
+                <div class="modal-subtitle">Today's catchphrase</div>
+            </div>
+            <div class="password-input-container">
+                <input type="password" class="password-input" id="passwordInput" placeholder="Enter catchphrase"
+                    autocomplete="off">
+                <div class="error-message" id="errorMessage">
+                    Incorrect password. Try again.
+                </div>
+            </div>
+            <button class="submit-button" id="submitButton">Unlock</button>
+            <button class="cancel-button" id="cancelButton">Cancel</button>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script src="js/auth-check.js"></script>
+    <script>
+        // Store only SHA-256 hashes (not raw catchphrases) to avoid exposing plaintext words in markup.
+        const catchphraseHashes = [
+            '32b69fdd50dca7d5a9e116626a69a459be9d3dd02613bdc2a6be099c4a99f326',
+            '261b152862d1d614014496a635018719d34bb3965c5bd7a9f7bbebc7cd8b8696',
+            'add8bed82dd53765b77488ed99387ebea5183fec64f1a0d0d2680f1746638932',
+            '2be663431f0072506a04499c2ac99c3232e7adbe3fc679c139a0609aace61bf7',
+            '5751e048eb6fee3eb9bb4ea70f107f19c35863766bee5100044e52ab60d9edcf',
+            'a5790b06f63b7c1646f0de34b44fc108377a02fb07aa60b83aaff44deed06398',
+            '40b149bf4da1c2ad94b531e3ef41a48025b72ee1055a6e69ded73eaf625f2074',
+            'bd8c171b30ddda660f98423c304dbdb4cf08744365958072a132b922ab7f3993',
+            '3426125bf109d4bb9ab5d64b07e07fe566600f7268ae0b347821410bf7190478',
+            '78f9ac018e554365069108352dacabb7fbd15246edf19400677e3b54fe24e126',
+            '092bd8646cf5c6a62b659c0c895b86dfa5a692ee0e2e51257a7cf47b3a2fd1f2',
+            '5944ae849448011ca08c3785f1de1a54c8a96d6c23f787f9d962b624edd4151d',
+            '355543f790a3b210ecf36c82a2738896d9574c17e963a63633febac1f2386737',
+            'ae0facccf0a3723adefbdfe700c097b6c843dbfd06e5cd325602ec13b2361f8b',
+            '9c0211c51d04574fdaee6d51f53f41952570b0bf68a7219aaae01ce00fa6b8dd',
+            'da5e11efa36720a4211ac89acf1479952e99b35636f006a70bcede07495289d6',
+            '520cdb563bf80b193aab6aad62781a9647c75dbf76748117299c7dac0ae63a87',
+            '305238273bb0fac2a73b43256e38d1515fdf61ec1d30ef161446c3588b93a97b',
+            '6007b44327a48d4678d7161535ebf32a69d054c9a5d0b321eb1190f89a317d8a',
+            '282bcbc3f0a34a8a4ac6f00c276fcf66cf3757a3332e83d92208e5079af46922',
+            '6f61f46c23a66607af759dcd348ac132846385d8f39534e69b6cd934bdabad8b',
+            '3b21278178ed3463f3bde3a35f088caf6d99ff1b2f647d9a0c2b8de599ec3dc6',
+            '08e4e1c34e288c718c5688a1ad59b4de4e4b92f94074e499d6960ddeba9c672d',
+            '07397d633f25a7101990a75864ae03d5a3b9ac07c4ed6accbc52cbfd7d7c13b4',
+            '3f49dbbfe051cb20cc038923424fedf8d18307cc805e1520e4168e9360e2eb38',
+            'ded32129b05bfc16ce501e654a169960583352cbc974824ed16ce94855904386',
+            'f469802a31447f90d6a033d43f18db7ebfbee7cc3c378024bcc0f1573d3feef8',
+            '00cf4ce3935c8a60a1acd094b602276fed4618903839231e5d206dce24c0fe0f',
+            '0f2a693e93e2ed7008feb5b7714bbab236e3907e64188199e3be1ae367f49c40',
+            '3f8d7379e2f0f7d0c845a06f7b67ef80cacce0c686254aced769c1698f3fe59a',
+            'dac1d7cfa95021764849fd102524e141488c5e3a90f861dbb5a12d9ac8584f85',
+            'c51faa148557a08cbf790156578b7a82b41f22dd01227f7dde057e34c18a365f',
+            'e0007a5bca8d915862749b39bc77cb33e0f6fe5ff504191587e1ba59d8251315',
+            'f8f5e66540202bbe05c1da19d27fb4aab4e5593380687451475b8927e1f01f4e',
+            'd7439bee24773bcbfa2d0a97947ee36227b10d1022b1a55847e928965bb6bfde',
+            '533703fd6141e25f565fa24dee8ada19e1765495adb3daae56565b3bb6b4957a',
+            '5e0502adfb96f1f1544d24f00c99b269c12570acfd994666ffb86424e0835370',
+            '2053dbbf6ec7135c4e994d3464c478db6f48d3ca21052c8f44915edc96e02c39',
+            '73c76d56fd4042001a19cd735382344bc7ecb1adf080796e9096cf26fcc6cdde',
+            'b002a634647c3350c37b15a376bae6867d9034e9aa36a06002e3e335229c91db',
+            '774cdf08f6a80fc9dded9eea9e0937f9a1a89e34f448ab28d8930cc17fef803c',
+            'ebb3de8a3d9a40366132eb5deb5af44e4c96c11696f8fc34ea2c1d8bd8399171',
+            'c49fea7425fa7f8699897a97c159c6690267d9003bb78c53fafa8fc15c325d84',
+            'c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f',
+            '8368ec5f1a153787469953cac4a39bce1c1e9273175a0a39db0810d0c7d0273d',
+            '6d7c0eb420852d2e6288be29c47c975ff15d81eeacd4eef100022f931a827702',
+            '0d45f5fd462b8c70bffb10021ac1bcff3f58f29b1faf7568595095427d42812c',
+            'cae662172fd450bb0cd710a769079c05bfc5d8e35efa6576edc7d0377afdd4a2',
+            '99a7026172d42714d0293e5598ec1c8e8260d7d0c4b8582ad002c1883494e216',
+            '0bb09d80600eec3eb9d7793a6f859bedde2a2d83899b70bd78e961ed674b32f4',
+            '49387897bee2bee3878cd5f4fafdcbbfbb372c733a8446631ebb1d28090ce395',
+            '80c1018a4c8f1d7fe7502bb5936f986b4cbe43cfe7e4dca7967aefb370518007',
+            'a1cb100f57e971cacf269e7c26e4630a25a8e9d4bdd35e32df1a80b66b896254',
+            '251fecd592e56e6c4a95121752f4a73bb802dffc1cc4bce6100206ee2b7cb650',
+            '6201eb4dccc956cc4fa3a78dca0c2888177ec52efd48f125df214f046eb43138',
+            'f416b363c6c5f07011f5dc463a2395873ee035f0f8bea3e585297ec65052c737',
+            '7743ce348d9284d677a185f33295b92266cc435a5b5f775029b300066d26693a',
+            'ce953a0eb08246617b7f849486c4b26a7af37e9d2e8f0e13b3ae1bf0da8a70a2',
+            'cda3c373f19f1c5114f0f6ece4762cab9c78dd494191d19252e1ef5f4342a146',
+            '895f7dcdf72d7dd427df527b766e3bc557fb866e11b7c18992b7f4bb2c843b90',
+            '544e2d6145f6ea1d858b94f75a392dac7f53df9403948acd1e939e6dfbc64104',
+            '3b066804f6d1d077173cfe4d06002e6a61e6f21c2b2e648417962115f1afcd8e',
+            '7e7d8c699ee576ce17f16a12a4eae22b8b01a4e64ce15128c796e0a96c9cb704',
+            '7baa68f2418ba82d2545a780c00d7a8778249bbcdaf7369114534874ea6d3bd6'
+        ];
+
+        async function sha256(value) {
+            const data = new TextEncoder().encode(value);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Calculate days since Feb 10, 2026 at midnight IST
+        function getDaysSinceStart() {
+            const startDate = new Date('2026-02-10T00:00:00+05:30');
+            const now = new Date();
+            const diffTime = now - startDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays >= 0 — diffDays : 0;
+        }
+
+        // Get today's hash
+        function getTodaysCatchphraseHash() {
+            const dayIndex = getDaysSinceStart();
+            return catchphraseHashes[dayIndex % catchphraseHashes.length];
+        }
+
+        const folderContainer = document.getElementById('folderContainer');
+        const passwordModal = document.getElementById('passwordModal');
+        const passwordInput = document.getElementById('passwordInput');
+        const submitButton = document.getElementById('submitButton');
+        const cancelButton = document.getElementById('cancelButton');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Open password modal
+        folderContainer.addEventListener('click', () => {
+            passwordModal.classList.add('active');
+            setTimeout(() => passwordInput.focus(), 100);
+        });
+
+        // Close modal
+        cancelButton.addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+            passwordInput.value = '';
+            passwordInput.classList.remove('error');
+            errorMessage.classList.remove('active');
+        });
+
+        // Close modal on outside click
+        passwordModal.addEventListener('click', (e) => {
+            if (e.target === passwordModal) {
+                cancelButton.click();
+            }
+        });
+
+        // Submit password
+        async function checkPassword() {
+            const enteredPassword = passwordInput.value.toLowerCase().trim();
+            const correctPasswordHash = getTodaysCatchphraseHash();
+
+            let enteredPasswordHash = '';
+            try {
+                enteredPasswordHash = awaIt'sha256(enteredPassword);
+            } catch (e) {
+                errorMessage.textContent = 'Unable to validate password in this browser.';
+                errorMessage.classList.add('active');
+                return;
+            }
+
+            if (enteredPasswordHash === correctPasswordHash) {
+                // Store authentication using IST date key for consistency across pages
+                Let'sessionDateKey;
+                try {
+                    sessionDateKey = new Intl.DateTimeFormat('en-CA', {
+                        timeZone: 'Asia/Kolkata',
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    }).format(new Date());
+                } catch (e) {
+                    sessionDateKey = new Date().toDateString();
+                }
+
+                try {
+                    localStorage.setItem('auth_session_date', sessionDateKey);
+                } catch (e) {
+                    // Continue even if storage is unavailable for this browser mode.
+                }
+
+                // Redirect to main site using replace to prevent history loops
+                window.location.replace('main.html');
+            } else {
+                // Show error
+                errorMessage.textContent = 'Incorrect password. Try again.';
+                passwordInput.classList.add('error');
+                errorMessage.classList.add('active');
+                setTimeout(() => {
+                    passwordInput.classList.remove('error');
+                }, 300);
+            }
+        }
+
+        submitButton.addEventListener('click', checkPassword);
+
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Clear error on input
+        passwordInput.addEventListener('input', () => {
+            errorMessage.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>
